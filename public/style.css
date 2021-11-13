@@ -1,17 +1,26 @@
 * {
     margin: 0;
     display: flexbox;
-    background-color: rgb(255, 255, 255);
 }
 
 .player1 {
     float: left;
-    margin-left: 20%;
+    margin-left: 10%;
+    max-width: 600px;
+    min-width: 100px;
+    width: 30%;
+    background-color: rgb(158, 255, 250);
+    padding: 2px;
 }
 
 .player2 {
     float: right;
-    margin-right: 20%;
+    margin-right: 10%;
+    max-width: 600px;
+    min-width: 100px;
+    width: 30%;
+    background-color: rgb(255, 200, 200);
+    padding: 2px;
 }
 
 .content {
@@ -25,4 +34,30 @@
 
 .footercontainer {
     margin-top: 10%;
+}
+
+#instructions {
+    max-width: 600px;
+    min-width: 300px;
+    width: 30%;
+}
+
+#p1text, #p2text {
+    width: 40%;
+}
+
+p {
+    font-size: 12px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+#exp {
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

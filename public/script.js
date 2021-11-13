@@ -189,7 +189,7 @@ async function enter2() {
     p2text.hidden = true;
     p1btn.hidden = false;
     p2btn.hidden = true;
-    instruct.innerHTML = 'Player 2 turn'
+    instruct.innerHTML = 'Player 1 turn'
 
     
 }

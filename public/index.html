@@ -13,7 +13,7 @@
     <center>
         <div class="title-container">
             <h1 class="title">Holjjang</h1>
-            <p class="bio">Marble Guessing Game</p>
+            <h4 class="bio">Marble Guessing Game</h4>
             <br>
             <button id="startbtn" onclick="game()">Start Game</button>
             <br>
@@ -24,26 +24,32 @@
     </center>
     <div class="midcontainer">
         <div class="player1" id="playe1div">
-            <h4 class="">Player 1</h4>
+            <h4 class="content">Player 1</h4>
+            <br><br>
             <form onsubmit="enter1(); return false" class="">
                 <input id="p1text" type="text" placeholder="example: 1,0" required class="" hidden>
                 <input type="submit" id="p1btn" hidden class="" value="Enter">
             </form>
+            <br>
+            <br>
             <p id="P1-marble-count"></p>
         </div>
 
         <div class="player2" id="playe2div" class="content2">
             <h4 class="content2">Player 2</h4>
-            <form onsubmit="enter2(); return false" class=""> 
-                
-                <input id="p2text" type="text" placeholder="example: 1,0" required class="" class="" hidden>
-                <input id="p2btn" type="submit" hidden class="" value="Enter" class="">
+            <br><br>
+            <form onsubmit="enter2(); return false" class="content2"> 
+                <input id="p2text" type="text" placeholder="example: 1,0" required class="" class="content2" hidden>
+                <input id="p2btn" type="submit" hidden class="" value="Enter" class="content2">
             </form>
+            <br>
+            <br>
             <p id="P2-marble-count" class="content2"></p>
         </div>
         
     </div>
     <br>
+    
     <center>
         <div class="footercontainer">
             <p id="exp">Click Start to Begin</p>
