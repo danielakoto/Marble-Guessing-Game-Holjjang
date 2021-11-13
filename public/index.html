@@ -5,21 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Holjjang</title>
-    <link rel="shortcut icon" href="https://img.icons8.com/dusk/64/000000/sphere.png">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="shortcut icon" href="https://img.icons8.com/dusk/64/000000/sphere.png"> -->
+    <script src="script.js"></script>
 </head>
 <body>
     <center>
         <div class="title-container">
             <h1 class="title">Holjjang</h1>
             <p class="bio">Marble Guessing Game</p>
+            <br>
+            <button id="startbtn" onclick="game()">Start Game</button>
+            <br>
+            <br>
+            <p id="instructions" hidden></p>
+            <br>
         </div>
     </center>
     <div class="midcontainer">
+        <div class="player1" id="playe1div">
+            <h4 class="">Player 1</h4>
+            <form onsubmit="enter1(); return false" class="">
+                <input id="p1text" type="text" placeholder="example: 1,0" required class="" hidden>
+                <input type="submit" id="p1btn" hidden class="" value="Enter">
+            </form>
+            <p id="P1-marble-count"></p>
+        </div>
+
+        <div class="player2" id="playe2div" class="content2">
+            <h4 class="content2">Player 2</h4>
+            <form onsubmit="enter2(); return false" class=""> 
+                
+                <input id="p2text" type="text" placeholder="example: 1,0" required class="" class="" hidden>
+                <input id="p2btn" type="submit" hidden class="" value="Enter" class="">
+            </form>
+            <p id="P2-marble-count" class="content2"></p>
+        </div>
         
     </div>
+    <br>
     <center>
         <div class="footercontainer">
-
+            <p id="exp">Click Start to Begin</p>
         </div>
     </center>
 </body>

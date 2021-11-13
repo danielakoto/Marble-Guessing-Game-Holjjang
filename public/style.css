@@ -1,4 +1,28 @@
 * {
     margin: 0;
     display: flexbox;
+    background-color: rgb(255, 255, 255);
+}
+
+.player1 {
+    float: left;
+    margin-left: 20%;
+}
+
+.player2 {
+    float: right;
+    margin-right: 20%;
+}
+
+.content {
+    float: left;
+    position: inline-block;
+}
+.content2 {
+    float: right;
+    position: inline-block;
+}
+
+.footercontainer {
+    margin-top: 10%;
 }
