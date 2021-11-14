@@ -12,7 +12,8 @@ function getRandIntFromTo(max) {
 let player1 = 10;
 let player2 = 10;
 let p1enter = '';
-let p2enter = ''; 
+let p2enter = '';
+var holdout;
 
 
 async function game() {
@@ -32,7 +33,14 @@ async function game() {
     p2Count.innerHTML = `Marble Count: ${player2}`;
 
     p1.hidden = false;
-    instruct.innerHTML = 'Enter #Marbles and 1(Even) or (1)Odd Example: (2, 0) <br> Player 1 turn'
+    instruct.innerHTML = 'Enter amount of Marbles and 1(Even) or (1)Odd <br> Example: (2, 0) <br> Wating for Player 1...';
+    
+    await sleep(750);
+    holdout = NaN;
+    while(isNaN(holdout) || holdout < 0 || holdout > player1){
+        holdout = parseInt(prompt('Player 2: Enter the amount you want to hold, Enter Valid Input'));
+    }
+
 }
 
 function seperate() {
@@ -67,7 +75,7 @@ function addToP2(x) {
 
 async function enter1() {
     //await sleep(3000);
-    let p2putUp = getRandIntFromTo(player2) % 2;
+    let p2putUp = holdout % 2;
     let p1btn = document.getElementById('p1btn');
     let p2btn = document.getElementById('p2btn');
     let instruct = document.getElementById('instructions');
@@ -105,18 +113,19 @@ async function enter1() {
         addToP2(p1putUp);
     } else {
         console.log('correct!');
-        subFromP2(p1putUp);
-        addToP1(p1putUp);
+        subFromP2(holdout);
+        addToP1(holdout);
     }
     console.log('done');
     
     //Switch to player 2
 
     p1text.hidden = true;
+    p1text.value = "";
     p2text.hidden = false;
     p1btn.hidden = true;
     p2btn.hidden = false;
-    instruct.innerHTML = 'Player 2 turn'
+    instruct.innerHTML = 'Waiting for Player 2...'
     //return p1enter;
 
 
@@ -128,12 +137,17 @@ async function enter1() {
         alert('Game Over! Player 1 Wins!');
         location.reload();
     }
+    await sleep(750);
+    holdout = NaN;
+    while(isNaN(holdout) || holdout < 0 || holdout > player1){
+        holdout = parseInt(prompt('Player 1: Enter the amount you want to hold'));
+    }
 }
 
 async function enter2() {
     //await sleep(30000);
 
-    let p1putUp = getRandIntFromTo(player1) % 2;
+    let p1putUp = holdout % 2;
     let p1btn = document.getElementById('p1btn');
     let p2btn = document.getElementById('p2btn');
     let instruct = document.getElementById('instructions');
@@ -172,10 +186,19 @@ async function enter2() {
         addToP1(p2putUp);
     } else {
         console.log('correct!');
-        subFromP1(p2putUp);
-        addToP2(p2putUp);
+        subFromP1(holdout);
+        addToP2(holdout);
     }
     console.log('done');
+    
+    //return p2enter;
+    p1text.hidden = false;
+    p2text.hidden = true;
+    p2text.value = "";
+    p1btn.hidden = false;
+    p2btn.hidden = true;
+    instruct.innerHTML = 'Waiting for Player 1...'
+    
     if(player2 === 0) {
         alert('Game Over! Player 1 Wins!');
         location.reload();
@@ -184,14 +207,11 @@ async function enter2() {
         alert('Game Over! Player 2 Wins!');
         location.reload();
     }
-    //return p2enter;
-    p1text.hidden = false;
-    p2text.hidden = true;
-    p1btn.hidden = false;
-    p2btn.hidden = true;
-    instruct.innerHTML = 'Player 1 turn'
-
-    
+    await sleep(750);
+    holdout = NaN;
+    while(isNaN(holdout) || holdout < 0 || holdout > player1){
+        holdout = parseInt(prompt('Player 1: Enter the amount you want to hold, Enter Valid Input'));
+    }
 }
 
 function sleep(ms) {

@@ -8,9 +8,9 @@
     margin-left: 10%;
     max-width: 600px;
     min-width: 100px;
-    width: 30%;
+    width: 25%;
     background-color: rgb(158, 255, 250);
-    padding: 2px;
+    padding: 2%;
 }
 
 .player2 {
@@ -18,19 +18,15 @@
     margin-right: 10%;
     max-width: 600px;
     min-width: 100px;
-    width: 30%;
+    width: 25%;
     background-color: rgb(255, 200, 200);
-    padding: 2px;
+    padding: 2%;
 }
 
-.content {
-    float: left;
-    position: inline-block;
+.midcontianer {
+    display: block;
 }
-.content2 {
-    float: right;
-    position: inline-block;
-}
+
 
 .footercontainer {
     margin-top: 10%;
